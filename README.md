@@ -1,5 +1,9 @@
 # 🚀 AI & 자동화 전문가 포트폴리오
 
+[![CI](https://github.com/YOUR_USERNAME/YOUR_REPO_NAME/workflows/CI/badge.svg)](https://github.com/YOUR_USERNAME/YOUR_REPO_NAME/actions/workflows/ci.yml)
+[![Deploy](https://github.com/YOUR_USERNAME/YOUR_REPO_NAME/workflows/Deploy%20to%20Production/badge.svg)](https://github.com/YOUR_USERNAME/YOUR_REPO_NAME/actions/workflows/deploy.yml)
+[![Code Quality](https://github.com/YOUR_USERNAME/YOUR_REPO_NAME/workflows/Code%20Quality/badge.svg)](https://github.com/YOUR_USERNAME/YOUR_REPO_NAME/actions/workflows/code-quality.yml)
+
 Next.js로 구축된 개인 포트폴리오 웹사이트입니다. 관리자 패널을 통해 프로젝트, 경력, 기술 스택 등을 동적으로 관리할 수 있습니다.
 
 ## ✨ 주요 기능
