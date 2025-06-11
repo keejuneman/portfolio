@@ -1,0 +1,55 @@
+# 🚫 Git에서 무시할 파일들
+
+# 📦 의존성 모듈
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 🔐 환경변수 파일 (보안상 중요!)
+# .env
+# .env.local
+# .env.development.local
+# .env.test.local
+# .env.production.local
+
+# 🏗️ Next.js 빌드 결과물
+.next/
+out/
+build/
+
+# 🔧 개발 도구 설정
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 📊 로그 파일
+*.log
+
+# 🗂️ 운영체제 생성 파일
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+
+
+# 📱 모바일 개발
+*.mobileprovision
+*.p8
+*.p12
+*.key
+*.pem
+
+# 🧪 테스트 커버리지
+coverage/
+.nyc_output/
+
+# 📦 패키지 관리자 락 파일 (선택사항)
+# package-lock.json
+# yarn.lock
+package.zip

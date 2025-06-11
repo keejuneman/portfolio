@@ -1,0 +1,50 @@
+[
+  {
+    "id": "1",
+    "title": "AI 챗봇 개발",
+    "description": "OpenAI API를 활용한 고객 서비스 챗봇입니다.",
+    "detailDescription": "자연어 처리와 머신러닝을 활용하여 고객 문의를 자동으로 처리하는 챗봇 시스템입니다.",
+    "techStack": ["Python", "OpenAI API", "FastAPI", "React"],
+    "imageUrl": "/placeholder.svg?height=200&width=400",
+    "startDate": "2023.05",
+    "endDate": "2023.08",
+    "role": "풀스택 개발자",
+    "contributions": [
+      { "area": "Backend API 개발", "percentage": 90 },
+      { "area": "Frontend 개발", "percentage": 70 },
+      { "area": "AI 모델 통합", "percentage": 85 }
+    ],
+    "results": ["고객 응답 시간 70% 단축", "고객 만족도 85% 향상"],
+    "links": [
+      { "type": "github", "url": "https://github.com/example/chatbot", "label": "GitHub Repository" }
+    ],
+    "tags": ["AI", "Chatbot", "Automation"],
+    "category": "AI/ML",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "order": 0
+  },
+  {
+    "id": "2",
+    "title": "포트폴리오 웹사이트",
+    "description": "Next.js로 구축한 개인 포트폴리오 웹사이트입니다.",
+    "detailDescription": "반응형 디자인과 다크모드를 지원하는 현대적인 포트폴리오 웹사이트입니다.",
+    "techStack": ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    "imageUrl": "/placeholder.svg?height=200&width=400",
+    "startDate": "2024.01",
+    "endDate": "2024.02",
+    "role": "프론트엔드 개발자",
+    "contributions": [
+      { "area": "UI/UX 디자인", "percentage": 100 },
+      { "area": "프론트엔드 개발", "percentage": 100 }
+    ],
+    "results": ["모바일 최적화 완료", "접근성 개선"],
+    "links": [
+      { "type": "github", "url": "https://github.com/example/portfolio", "label": "GitHub Repository" },
+      { "type": "demo", "url": "https://portfolio-demo.com", "label": "Live Demo" }
+    ],
+    "tags": ["Web", "Portfolio", "Responsive"],
+    "category": "Web",
+    "createdAt": "2024-01-02T00:00:00.000Z",
+    "order": 1
+  }
+] 
