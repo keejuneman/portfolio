@@ -48,10 +48,7 @@ interface Project {
   tags: string[]
   category: string
   order: number
-<<<<<<< HEAD
   createdAt: string
-=======
->>>>>>> f3cd1ad9adfa65e183b9d7ed7c70350b99f617c3
 }
 
 interface Experience {
@@ -296,7 +293,6 @@ export default function AdminPage() {
   // 프로젝트 폼 컴포넌트
   const ProjectsForm = () => {
     const [newProject, setNewProject] = useState<Partial<Project>>({
-<<<<<<< HEAD
       title: '',
       description: '',
       detailDescription: '',
@@ -367,10 +363,6 @@ export default function AdminPage() {
         setNewTag('')
       }
     }
-=======
-      title: '', description: '', techStack: [], category: 'Web'
-    })
->>>>>>> f3cd1ad9adfa65e183b9d7ed7c70350b99f617c3
 
     const addProject = () => {
       if (newProject.title && newProject.description) {
@@ -380,7 +372,6 @@ export default function AdminPage() {
           description: newProject.description,
           detailDescription: newProject.detailDescription || '',
           techStack: newProject.techStack || [],
-<<<<<<< HEAD
           imageUrl: newProject.imageUrl || '/placeholder.svg?height=200&width=400',
           startDate: newProject.startDate || '',
           endDate: newProject.endDate || '',
@@ -403,27 +394,13 @@ export default function AdminPage() {
           startDate: '',
           endDate: '',
           role: '',
-=======
-          imageUrl: '/placeholder.svg?height=200&width=400',
-          startDate: newProject.startDate || '',
-          endDate: newProject.endDate || '',
-          role: newProject.role || '',
->>>>>>> f3cd1ad9adfa65e183b9d7ed7c70350b99f617c3
           contributions: [],
           results: [],
           links: [],
           tags: [],
-<<<<<<< HEAD
           category: 'Web',
           order: 0
         })
-=======
-          category: newProject.category || 'Web',
-          order: projects.length
-        }
-        setProjects([...projects, project])
-        setNewProject({ title: '', description: '', techStack: [], category: 'Web' })
->>>>>>> f3cd1ad9adfa65e183b9d7ed7c70350b99f617c3
       }
     }
 
@@ -438,7 +415,6 @@ export default function AdminPage() {
             <CardTitle>새 프로젝트 추가</CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
-<<<<<<< HEAD
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <Label htmlFor="projectTitle">프로젝트 제목</Label>
@@ -462,24 +438,10 @@ export default function AdminPage() {
 
             <div>
               <Label htmlFor="projectDesc">간단한 설명</Label>
-=======
-            <div>
-              <Label htmlFor="projectTitle">프로젝트 제목</Label>
-              <Input 
-                id="projectTitle"
-                value={newProject.title || ''}
-                onChange={(e) => setNewProject({...newProject, title: e.target.value})}
-                placeholder="프로젝트 제목을 입력하세요"
-              />
-            </div>
-            <div>
-              <Label htmlFor="projectDesc">프로젝트 설명</Label>
->>>>>>> f3cd1ad9adfa65e183b9d7ed7c70350b99f617c3
               <Textarea 
                 id="projectDesc"
                 value={newProject.description || ''}
                 onChange={(e) => setNewProject({...newProject, description: e.target.value})}
-<<<<<<< HEAD
                 placeholder="프로젝트에 대한 간단한 설명을 입력하세요"
                 rows={2}
               />
@@ -496,12 +458,6 @@ export default function AdminPage() {
               />
             </div>
 
-=======
-                placeholder="프로젝트 설명을 입력하세요"
-                rows={3}
-              />
-            </div>
->>>>>>> f3cd1ad9adfa65e183b9d7ed7c70350b99f617c3
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <Label htmlFor="projectStartDate">시작일</Label>
@@ -522,7 +478,6 @@ export default function AdminPage() {
                 />
               </div>
             </div>
-<<<<<<< HEAD
 
             <div>
               <Label>기술 스택</Label>
@@ -727,8 +682,6 @@ export default function AdminPage() {
               </Select>
             </div>
 
-=======
->>>>>>> f3cd1ad9adfa65e183b9d7ed7c70350b99f617c3
             <Button onClick={addProject} className="w-full">
               <Plus className="h-4 w-4 mr-2" />
               프로젝트 추가
@@ -751,7 +704,6 @@ export default function AdminPage() {
                   <div className="flex-1">
                     <h4 className="font-medium">{project.title}</h4>
                     <p className="text-sm text-muted-foreground mt-1">{project.description}</p>
-<<<<<<< HEAD
                     <div className="flex flex-wrap gap-2 mt-2">
                       <Badge variant="secondary">{project.category}</Badge>
                       {project.techStack?.map((tech, index) => (
@@ -760,11 +712,6 @@ export default function AdminPage() {
                     </div>
                     <div className="mt-2">
                       <span className="text-xs text-muted-foreground">{project.startDate} ~ {project.endDate}</span>
-=======
-                    <div className="flex items-center gap-2 mt-2">
-                      <Badge variant="secondary">{project.category}</Badge>
-                      {project.startDate && <span className="text-xs text-muted-foreground">{project.startDate} ~ {project.endDate}</span>}
->>>>>>> f3cd1ad9adfa65e183b9d7ed7c70350b99f617c3
                     </div>
                   </div>
                   <Button variant="ghost" size="sm" onClick={() => removeProject(project.id)}>
@@ -913,13 +860,13 @@ export default function AdminPage() {
             <Card key={experience.id}>
               <CardContent className="p-4">
                 <div className="flex items-start justify-between">
-                                   <div className="flex-1">
-                   <h4 className="font-medium">{experience.position} - {experience.company}</h4>
-                   <p className="text-sm text-muted-foreground mt-1">{experience.description}</p>
-                   <div className="mt-2">
-                     <span className="text-xs text-muted-foreground">{experience.period}</span>
-                   </div>
-                 </div>
+                  <div className="flex-1">
+                    <h4 className="font-medium">{experience.position} - {experience.company}</h4>
+                    <p className="text-sm text-muted-foreground mt-1">{experience.description}</p>
+                    <div className="mt-2">
+                      <span className="text-xs text-muted-foreground">{experience.period}</span>
+                    </div>
+                  </div>
                   <Button variant="ghost" size="sm" onClick={() => removeExperience(experience.id)}>
                     <Trash2 className="h-4 w-4" />
                   </Button>
@@ -938,11 +885,7 @@ export default function AdminPage() {
       name: '', level: 3, category: 'Programming'
     })
 
-<<<<<<< HEAD
-    const categories = ['Programming', 'Frontend', 'Backend', 'Database', 'DevOps', 'Tools', ,'Business','Operations','AI & Data','Other']
-=======
-    const categories = ['Programming', 'Frontend', 'Backend', 'Database', 'DevOps', 'Tools', 'Other']
->>>>>>> f3cd1ad9adfa65e183b9d7ed7c70350b99f617c3
+    const categories = ['Programming', 'Frontend', 'Backend', 'Database', 'DevOps', 'Tools', 'Business','Operations','AI & Data','Other']
 
     const addSkill = () => {
       if (newSkill.name && newSkill.category) {
@@ -1277,41 +1220,41 @@ export default function AdminPage() {
               </Card>
             </TabsContent>
 
-                         <TabsContent value="experiences">
-               <Card>
-                 <CardHeader>
-                   <CardTitle>경력 관리</CardTitle>
-                   <CardDescription>경력 사항을 추가하고 관리합니다.</CardDescription>
-                 </CardHeader>
-                 <CardContent>
-                   <ExperiencesForm />
-                 </CardContent>
-               </Card>
-             </TabsContent>
+            <TabsContent value="experiences">
+              <Card>
+                <CardHeader>
+                  <CardTitle>경력 관리</CardTitle>
+                  <CardDescription>경력 사항을 추가하고 관리합니다.</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ExperiencesForm />
+                </CardContent>
+              </Card>
+            </TabsContent>
 
-             <TabsContent value="skills">
-               <Card>
-                 <CardHeader>
-                   <CardTitle>기술 관리</CardTitle>
-                   <CardDescription>기술 스택과 숙련도를 관리합니다.</CardDescription>
-                 </CardHeader>
-                 <CardContent>
-                   <SkillsForm />
-                 </CardContent>
-               </Card>
-             </TabsContent>
+            <TabsContent value="skills">
+              <Card>
+                <CardHeader>
+                  <CardTitle>기술 관리</CardTitle>
+                  <CardDescription>기술 스택과 숙련도를 관리합니다.</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <SkillsForm />
+                </CardContent>
+              </Card>
+            </TabsContent>
 
-             <TabsContent value="awards">
-               <Card>
-                 <CardHeader>
-                   <CardTitle>수상 관리</CardTitle>
-                   <CardDescription>수상 실적과 자격증을 관리합니다.</CardDescription>
-                 </CardHeader>
-                 <CardContent>
-                   <AwardsForm />
-                 </CardContent>
-               </Card>
-             </TabsContent>
+            <TabsContent value="awards">
+              <Card>
+                <CardHeader>
+                  <CardTitle>수상 관리</CardTitle>
+                  <CardDescription>수상 실적과 자격증을 관리합니다.</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <AwardsForm />
+                </CardContent>
+              </Card>
+            </TabsContent>
           </Tabs>
         </div>
       </div>
