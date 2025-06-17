@@ -46,15 +46,11 @@ export function ContactSection() {
   };
 
 
-
   const openKakaoChat = () => {
     // 카카오톡 오픈채팅 - 실제로는 본인의 오픈채팅 URL로 변경
-<<<<<<< HEAD
     window.open('https://open.kakao.com/o/sRqU6mCh', '_blank');
-=======
-    window.open('https://open.kakao.com/o/your-chat-id', '_blank');
->>>>>>> f3cd1ad9adfa65e183b9d7ed7c70350b99f617c3
   };
+
 
   if (!about) {
     return (
