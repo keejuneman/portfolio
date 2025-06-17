@@ -2,13 +2,14 @@ import { Project, Experience, Skill, Award, About } from './local-storage'
 
 // basePath를 고려한 데이터 경로 생성
 const getDataPath = (filename: string) => {
+  const basePath = process.env.NODE_ENV === 'production' ? '/portfolio' : ''
   return `${basePath}/data/${filename}`
 }
 
 // 정적 데이터 로더
 export const getStaticProjects = async (): Promise<Project[]> => {
   try {
-    const response = await fetch('/data/projects.json')
+    const response = await fetch(getDataPath('projects.json'))
     if (!response.ok) return []
     return await response.json()
   } catch {
@@ -18,7 +19,7 @@ export const getStaticProjects = async (): Promise<Project[]> => {
 
 export const getStaticExperiences = async (): Promise<Experience[]> => {
   try {
-    const response = await fetch('/data/experiences.json')
+    const response = await fetch(getDataPath('experiences.json'))
     if (!response.ok) return []
     return await response.json()
   } catch {
@@ -28,7 +29,7 @@ export const getStaticExperiences = async (): Promise<Experience[]> => {
 
 export const getStaticSkills = async (): Promise<Skill[]> => {
   try {
-    const response = await fetch('/data/skills.json')
+    const response = await fetch(getDataPath('skills.json'))
     if (!response.ok) return []
     return await response.json()
   } catch {
@@ -38,7 +39,7 @@ export const getStaticSkills = async (): Promise<Skill[]> => {
 
 export const getStaticAwards = async (): Promise<Award[]> => {
   try {
-    const response = await fetch('/data/awards.json')
+    const response = await fetch(getDataPath('awards.json'))
     if (!response.ok) return []
     return await response.json()
   } catch {
@@ -48,7 +49,7 @@ export const getStaticAwards = async (): Promise<Award[]> => {
 
 export const getStaticAbout = async (): Promise<About> => {
   try {
-    const response = await fetch('/data/about.json')
+    const response = await fetch(getDataPath('about.json'))
     if (!response.ok) throw new Error('Failed to load about data')
     return await response.json()
   } catch {
