@@ -1,5 +1,4 @@
 [
-<<<<<<< HEAD
   {
     "id": "1750169291903",
     "name": "Python",
@@ -92,18 +91,3 @@
     "order": 3
   }
 ]
-=======
-  { "id": "1", "name": "JavaScript", "category": "Programming", "level": 4, "createdAt": "2024-01-01T00:00:00.000Z", "order": 0 },
-  { "id": "2", "name": "TypeScript", "category": "Programming", "level": 4, "createdAt": "2024-01-01T00:00:00.000Z", "order": 1 },
-  { "id": "3", "name": "Python", "category": "Programming", "level": 3, "createdAt": "2024-01-01T00:00:00.000Z", "order": 2 },
-  { "id": "4", "name": "React", "category": "Frontend", "level": 4, "createdAt": "2024-01-01T00:00:00.000Z", "order": 3 },
-  { "id": "5", "name": "Next.js", "category": "Frontend", "level": 4, "createdAt": "2024-01-01T00:00:00.000Z", "order": 4 },
-  { "id": "6", "name": "Tailwind CSS", "category": "Frontend", "level": 4, "createdAt": "2024-01-01T00:00:00.000Z", "order": 5 },
-  { "id": "7", "name": "Node.js", "category": "Backend", "level": 3, "createdAt": "2024-01-01T00:00:00.000Z", "order": 6 },
-  { "id": "8", "name": "Express", "category": "Backend", "level": 3, "createdAt": "2024-01-01T00:00:00.000Z", "order": 7 },
-  { "id": "9", "name": "MongoDB", "category": "Database", "level": 3, "createdAt": "2024-01-01T00:00:00.000Z", "order": 8 },
-  { "id": "10", "name": "PostgreSQL", "category": "Database", "level": 3, "createdAt": "2024-01-01T00:00:00.000Z", "order": 9 },
-  { "id": "11", "name": "Git", "category": "Tools", "level": 4, "createdAt": "2024-01-01T00:00:00.000Z", "order": 10 },
-  { "id": "12", "name": "Docker", "category": "DevOps", "level": 2, "createdAt": "2024-01-01T00:00:00.000Z", "order": 11 }
-] 
->>>>>>> f3cd1ad9adfa65e183b9d7ed7c70350b99f617c3
