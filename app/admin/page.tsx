@@ -48,6 +48,10 @@ interface Project {
   tags: string[]
   category: string
   order: number
+<<<<<<< HEAD
+  createdAt: string
+=======
+>>>>>>> f3cd1ad9adfa65e183b9d7ed7c70350b99f617c3
 }
 
 interface Experience {
@@ -292,8 +296,81 @@ export default function AdminPage() {
   // 프로젝트 폼 컴포넌트
   const ProjectsForm = () => {
     const [newProject, setNewProject] = useState<Partial<Project>>({
+<<<<<<< HEAD
+      title: '',
+      description: '',
+      detailDescription: '',
+      techStack: [],
+      imageUrl: '/placeholder.svg?height=200&width=400',
+      startDate: '',
+      endDate: '',
+      role: '',
+      contributions: [],
+      results: [],
+      links: [],
+      tags: [],
+      category: 'Web',
+      order: 0
+    })
+    const [newTech, setNewTech] = useState('')
+    const [newContribution, setNewContribution] = useState({ area: '', percentage: 0 })
+    const [newResult, setNewResult] = useState('')
+    const [newLink, setNewLink] = useState({ type: '', url: '', label: '' })
+    const [newTag, setNewTag] = useState('')
+
+    const addTech = () => {
+      if (newTech.trim()) {
+        setNewProject(prev => ({
+          ...prev,
+          techStack: [...(prev.techStack || []), newTech.trim()]
+        }))
+        setNewTech('')
+      }
+    }
+
+    const addContribution = () => {
+      if (newContribution.area && newContribution.percentage > 0) {
+        setNewProject(prev => ({
+          ...prev,
+          contributions: [...(prev.contributions || []), newContribution]
+        }))
+        setNewContribution({ area: '', percentage: 0 })
+      }
+    }
+
+    const addResult = () => {
+      if (newResult.trim()) {
+        setNewProject(prev => ({
+          ...prev,
+          results: [...(prev.results || []), newResult.trim()]
+        }))
+        setNewResult('')
+      }
+    }
+
+    const addLink = () => {
+      if (newLink.type && newLink.url && newLink.label) {
+        setNewProject(prev => ({
+          ...prev,
+          links: [...(prev.links || []), newLink]
+        }))
+        setNewLink({ type: '', url: '', label: '' })
+      }
+    }
+
+    const addTag = () => {
+      if (newTag.trim()) {
+        setNewProject(prev => ({
+          ...prev,
+          tags: [...(prev.tags || []), newTag.trim()]
+        }))
+        setNewTag('')
+      }
+    }
+=======
       title: '', description: '', techStack: [], category: 'Web'
     })
+>>>>>>> f3cd1ad9adfa65e183b9d7ed7c70350b99f617c3
 
     const addProject = () => {
       if (newProject.title && newProject.description) {
@@ -303,19 +380,50 @@ export default function AdminPage() {
           description: newProject.description,
           detailDescription: newProject.detailDescription || '',
           techStack: newProject.techStack || [],
+<<<<<<< HEAD
+          imageUrl: newProject.imageUrl || '/placeholder.svg?height=200&width=400',
+          startDate: newProject.startDate || '',
+          endDate: newProject.endDate || '',
+          role: newProject.role || '',
+          contributions: newProject.contributions || [],
+          results: newProject.results || [],
+          links: newProject.links || [],
+          tags: newProject.tags || [],
+          category: newProject.category || 'Web',
+          order: projects.length,
+          createdAt: new Date().toISOString()
+        }
+        setProjects([...projects, project])
+        setNewProject({
+          title: '',
+          description: '',
+          detailDescription: '',
+          techStack: [],
+          imageUrl: '/placeholder.svg?height=200&width=400',
+          startDate: '',
+          endDate: '',
+          role: '',
+=======
           imageUrl: '/placeholder.svg?height=200&width=400',
           startDate: newProject.startDate || '',
           endDate: newProject.endDate || '',
           role: newProject.role || '',
+>>>>>>> f3cd1ad9adfa65e183b9d7ed7c70350b99f617c3
           contributions: [],
           results: [],
           links: [],
           tags: [],
+<<<<<<< HEAD
+          category: 'Web',
+          order: 0
+        })
+=======
           category: newProject.category || 'Web',
           order: projects.length
         }
         setProjects([...projects, project])
         setNewProject({ title: '', description: '', techStack: [], category: 'Web' })
+>>>>>>> f3cd1ad9adfa65e183b9d7ed7c70350b99f617c3
       }
     }
 
@@ -330,6 +438,31 @@ export default function AdminPage() {
             <CardTitle>새 프로젝트 추가</CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
+<<<<<<< HEAD
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <Label htmlFor="projectTitle">프로젝트 제목</Label>
+                <Input 
+                  id="projectTitle"
+                  value={newProject.title || ''}
+                  onChange={(e) => setNewProject({...newProject, title: e.target.value})}
+                  placeholder="프로젝트 제목을 입력하세요"
+                />
+              </div>
+              <div>
+                <Label htmlFor="projectRole">역할</Label>
+                <Input 
+                  id="projectRole"
+                  value={newProject.role || ''}
+                  onChange={(e) => setNewProject({...newProject, role: e.target.value})}
+                  placeholder="예: 풀스택 개발자"
+                />
+              </div>
+            </div>
+
+            <div>
+              <Label htmlFor="projectDesc">간단한 설명</Label>
+=======
             <div>
               <Label htmlFor="projectTitle">프로젝트 제목</Label>
               <Input 
@@ -341,14 +474,34 @@ export default function AdminPage() {
             </div>
             <div>
               <Label htmlFor="projectDesc">프로젝트 설명</Label>
+>>>>>>> f3cd1ad9adfa65e183b9d7ed7c70350b99f617c3
               <Textarea 
                 id="projectDesc"
                 value={newProject.description || ''}
                 onChange={(e) => setNewProject({...newProject, description: e.target.value})}
+<<<<<<< HEAD
+                placeholder="프로젝트에 대한 간단한 설명을 입력하세요"
+                rows={2}
+              />
+            </div>
+
+            <div>
+              <Label htmlFor="projectDetailDesc">상세 설명</Label>
+              <Textarea 
+                id="projectDetailDesc"
+                value={newProject.detailDescription || ''}
+                onChange={(e) => setNewProject({...newProject, detailDescription: e.target.value})}
+                placeholder="프로젝트에 대한 상세한 설명을 입력하세요"
+                rows={3}
+              />
+            </div>
+
+=======
                 placeholder="프로젝트 설명을 입력하세요"
                 rows={3}
               />
             </div>
+>>>>>>> f3cd1ad9adfa65e183b9d7ed7c70350b99f617c3
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <Label htmlFor="projectStartDate">시작일</Label>
@@ -369,6 +522,213 @@ export default function AdminPage() {
                 />
               </div>
             </div>
+<<<<<<< HEAD
+
+            <div>
+              <Label>기술 스택</Label>
+              <div className="flex gap-2 mt-2">
+                <Input 
+                  value={newTech}
+                  onChange={(e) => setNewTech(e.target.value)}
+                  placeholder="기술을 입력하세요"
+                  onKeyPress={(e) => e.key === 'Enter' && (e.preventDefault(), addTech())}
+                />
+                <Button type="button" onClick={addTech} size="sm">
+                  <Plus className="h-4 w-4" />
+                </Button>
+              </div>
+              <div className="flex flex-wrap gap-2 mt-2">
+                {newProject.techStack?.map((tech, index) => (
+                  <Badge key={index} variant="secondary">
+                    {tech}
+                    <button
+                      type="button"
+                      onClick={() => setNewProject(prev => ({
+                        ...prev,
+                        techStack: prev.techStack?.filter((_, i) => i !== index)
+                      }))}
+                      className="ml-1"
+                    >
+                      ×
+                    </button>
+                  </Badge>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <Label>기여도</Label>
+              <div className="grid grid-cols-2 gap-2 mt-2">
+                <Input 
+                  value={newContribution.area}
+                  onChange={(e) => setNewContribution(prev => ({...prev, area: e.target.value}))}
+                  placeholder="영역"
+                />
+                <Input 
+                  type="number"
+                  min="0"
+                  max="100"
+                  value={newContribution.percentage}
+                  onChange={(e) => setNewContribution(prev => ({...prev, percentage: parseInt(e.target.value)}))}
+                  placeholder="퍼센트"
+                />
+              </div>
+              <Button type="button" onClick={addContribution} size="sm" className="mt-2">
+                <Plus className="h-4 w-4 mr-1" />
+                기여도 추가
+              </Button>
+              <div className="space-y-2 mt-2">
+                {newProject.contributions?.map((contribution, index) => (
+                  <div key={index} className="flex items-center gap-2 p-2 bg-muted rounded">
+                    <span className="flex-1">{contribution.area}</span>
+                    <span className="text-sm text-muted-foreground">{contribution.percentage}%</span>
+                    <Button
+                      type="button"
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => setNewProject(prev => ({
+                        ...prev,
+                        contributions: prev.contributions?.filter((_, i) => i !== index)
+                      }))}
+                    >
+                      <Trash2 className="h-3 w-3" />
+                    </Button>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <Label>성과</Label>
+              <div className="flex gap-2 mt-2">
+                <Input 
+                  value={newResult}
+                  onChange={(e) => setNewResult(e.target.value)}
+                  placeholder="성과를 입력하세요"
+                  onKeyPress={(e) => e.key === 'Enter' && (e.preventDefault(), addResult())}
+                />
+                <Button type="button" onClick={addResult} size="sm">
+                  <Plus className="h-4 w-4" />
+                </Button>
+              </div>
+              <div className="space-y-2 mt-2">
+                {newProject.results?.map((result, index) => (
+                  <div key={index} className="flex items-center gap-2 p-2 bg-muted rounded">
+                    <span className="flex-1">{result}</span>
+                    <Button
+                      type="button"
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => setNewProject(prev => ({
+                        ...prev,
+                        results: prev.results?.filter((_, i) => i !== index)
+                      }))}
+                    >
+                      <Trash2 className="h-3 w-3" />
+                    </Button>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <Label>링크</Label>
+              <div className="grid grid-cols-3 gap-2 mt-2">
+                <Input 
+                  value={newLink.type}
+                  onChange={(e) => setNewLink(prev => ({...prev, type: e.target.value}))}
+                  placeholder="타입 (예: github)"
+                />
+                <Input 
+                  value={newLink.url}
+                  onChange={(e) => setNewLink(prev => ({...prev, url: e.target.value}))}
+                  placeholder="URL"
+                />
+                <Input 
+                  value={newLink.label}
+                  onChange={(e) => setNewLink(prev => ({...prev, label: e.target.value}))}
+                  placeholder="라벨"
+                />
+              </div>
+              <Button type="button" onClick={addLink} size="sm" className="mt-2">
+                <Plus className="h-4 w-4 mr-1" />
+                링크 추가
+              </Button>
+              <div className="space-y-2 mt-2">
+                {newProject.links?.map((link, index) => (
+                  <div key={index} className="flex items-center gap-2 p-2 bg-muted rounded">
+                    <span className="flex-1">
+                      <span className="font-medium">{link.type}:</span> {link.label}
+                    </span>
+                    <Button
+                      type="button"
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => setNewProject(prev => ({
+                        ...prev,
+                        links: prev.links?.filter((_, i) => i !== index)
+                      }))}
+                    >
+                      <Trash2 className="h-3 w-3" />
+                    </Button>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <Label>태그</Label>
+              <div className="flex gap-2 mt-2">
+                <Input 
+                  value={newTag}
+                  onChange={(e) => setNewTag(e.target.value)}
+                  placeholder="태그를 입력하세요"
+                  onKeyPress={(e) => e.key === 'Enter' && (e.preventDefault(), addTag())}
+                />
+                <Button type="button" onClick={addTag} size="sm">
+                  <Plus className="h-4 w-4" />
+                </Button>
+              </div>
+              <div className="flex flex-wrap gap-2 mt-2">
+                {newProject.tags?.map((tag, index) => (
+                  <Badge key={index} variant="secondary">
+                    {tag}
+                    <button
+                      type="button"
+                      onClick={() => setNewProject(prev => ({
+                        ...prev,
+                        tags: prev.tags?.filter((_, i) => i !== index)
+                      }))}
+                      className="ml-1"
+                    >
+                      ×
+                    </button>
+                  </Badge>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <Label htmlFor="projectCategory">카테고리</Label>
+              <Select 
+                value={newProject.category || 'Web'} 
+                onValueChange={(value) => setNewProject({...newProject, category: value})}
+              >
+                <SelectTrigger>
+                  <SelectValue placeholder="카테고리 선택" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="Web">Web</SelectItem>
+                  <SelectItem value="Mobile">Mobile</SelectItem>
+                  <SelectItem value="AI/ML">AI/ML</SelectItem>
+                  <SelectItem value="Desktop">Desktop</SelectItem>
+                  <SelectItem value="Other">Other</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+
+=======
+>>>>>>> f3cd1ad9adfa65e183b9d7ed7c70350b99f617c3
             <Button onClick={addProject} className="w-full">
               <Plus className="h-4 w-4 mr-2" />
               프로젝트 추가
@@ -391,9 +751,20 @@ export default function AdminPage() {
                   <div className="flex-1">
                     <h4 className="font-medium">{project.title}</h4>
                     <p className="text-sm text-muted-foreground mt-1">{project.description}</p>
+<<<<<<< HEAD
+                    <div className="flex flex-wrap gap-2 mt-2">
+                      <Badge variant="secondary">{project.category}</Badge>
+                      {project.techStack?.map((tech, index) => (
+                        <Badge key={index} variant="outline">{tech}</Badge>
+                      ))}
+                    </div>
+                    <div className="mt-2">
+                      <span className="text-xs text-muted-foreground">{project.startDate} ~ {project.endDate}</span>
+=======
                     <div className="flex items-center gap-2 mt-2">
                       <Badge variant="secondary">{project.category}</Badge>
                       {project.startDate && <span className="text-xs text-muted-foreground">{project.startDate} ~ {project.endDate}</span>}
+>>>>>>> f3cd1ad9adfa65e183b9d7ed7c70350b99f617c3
                     </div>
                   </div>
                   <Button variant="ghost" size="sm" onClick={() => removeProject(project.id)}>
@@ -567,7 +938,11 @@ export default function AdminPage() {
       name: '', level: 3, category: 'Programming'
     })
 
+<<<<<<< HEAD
+    const categories = ['Programming', 'Frontend', 'Backend', 'Database', 'DevOps', 'Tools', ,'Business','Operations','AI & Data','Other']
+=======
     const categories = ['Programming', 'Frontend', 'Backend', 'Database', 'DevOps', 'Tools', 'Other']
+>>>>>>> f3cd1ad9adfa65e183b9d7ed7c70350b99f617c3
 
     const addSkill = () => {
       if (newSkill.name && newSkill.category) {

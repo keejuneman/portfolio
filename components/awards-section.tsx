@@ -8,10 +8,17 @@ import { Badge } from "@/components/ui/badge"
 import { Trophy, AwardIcon, GraduationCap, Star, Calendar } from "lucide-react"
 import { motion } from "framer-motion"
 import Image from "next/image"
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog"
 
 export function AwardsSection() {
   const [awards, setAwards] = useState<Award[]>([])
   const [loading, setLoading] = useState(true)
+  const [selectedAward, setSelectedAward] = useState<Award | null>(null)
 
   useEffect(() => {
     const loadAwards = async () => {
@@ -40,8 +47,8 @@ export function AwardsSection() {
     )
   }
 
-  const getCategoryIcon = (category: string) => {
-    switch (category) {
+  const getCategoryIcon = (type: string) => {
+    switch (type) {
       case "수상":
         return Trophy
       case "자격증":
@@ -53,8 +60,8 @@ export function AwardsSection() {
     }
   }
 
-  const getCategoryColor = (category: string) => {
-    switch (category) {
+  const getCategoryColor = (type: string) => {
+    switch (type) {
       case "수상":
         return "from-yellow-500 to-orange-500"
       case "자격증":
@@ -98,7 +105,10 @@ export function AwardsSection() {
                 viewport={{ once: true }}
                 className="group"
               >
-                <Card className="overflow-hidden bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-700 border-0 shadow-lg hover:shadow-2xl transition-all duration-500 group-hover:-translate-y-2 h-full">
+                <Card 
+                  className="overflow-hidden bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-700 border-0 shadow-lg hover:shadow-2xl transition-all duration-500 group-hover:-translate-y-2 h-full cursor-pointer"
+                  onClick={() => setSelectedAward(award)}
+                >
                   {award.imageUrl && (
                     <div className="relative h-48 overflow-hidden">
                       <Image
@@ -109,8 +119,8 @@ export function AwardsSection() {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                       <div className="absolute top-4 right-4">
-                        <Badge className={`bg-gradient-to-r ${getCategoryColor(award.category)} text-white border-0`}>
-                          {award.category}
+                        <Badge className={`bg-gradient-to-r ${getCategoryColor(award.type)} text-white border-0`}>
+                          {award.type}
                         </Badge>
                       </div>
                     </div>
@@ -119,14 +129,14 @@ export function AwardsSection() {
                   <div className="p-6">
                     {!award.imageUrl && (
                       <div className="flex justify-between items-start mb-4">
-                        <div className={`p-2 bg-gradient-to-r ${getCategoryColor(award.category)} rounded-lg`}>
+                        <div className={`p-2 bg-gradient-to-r ${getCategoryColor(award.type)} rounded-lg`}>
                           {(() => {
-                            const IconComponent = getCategoryIcon(award.category)
+                            const IconComponent = getCategoryIcon(award.type)
                             return <IconComponent className="h-5 w-5 text-white" />
                           })()}
                         </div>
-                        <Badge className={`bg-gradient-to-r ${getCategoryColor(award.category)} text-white border-0`}>
-                          {award.category}
+                        <Badge className={`bg-gradient-to-r ${getCategoryColor(award.type)} text-white border-0`}>
+                          {award.type}
                         </Badge>
                       </div>
                     )}
@@ -152,6 +162,30 @@ export function AwardsSection() {
           </div>
         )}
       </div>
+
+      <Dialog open={!!selectedAward} onOpenChange={() => setSelectedAward(null)}>
+        <DialogContent className="max-w-2xl">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-bold text-slate-900 dark:text-white">
+              {selectedAward?.title}
+            </DialogTitle>
+          </DialogHeader>
+          <div className="mt-4 space-y-4">
+            <div className="flex items-center gap-2">
+              <Calendar className="h-4 w-4 text-slate-500 dark:text-slate-400" />
+              <span className="text-sm font-medium text-slate-600 dark:text-slate-400">
+                {selectedAward?.date}
+              </span>
+            </div>
+            <p className="text-sm font-semibold text-blue-600 dark:text-blue-400">
+              {selectedAward?.organization}
+            </p>
+            <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed whitespace-pre-wrap">
+              {selectedAward?.description}
+            </p>
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   )
 }

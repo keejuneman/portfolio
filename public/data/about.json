@@ -1,13 +1,13 @@
 {
-  "name": "김준",
-  "title": "풀스택 개발자",
-  "description": "안녕하세요! 풀스택 개발자 김준입니다.",
-  "email": "rlwns960@naver.com",
-  "phone": "010-0000-0000",
-  "location": "서울, 대한민국",
-  "github": "https://github.com/yourusername",
-  "linkedin": "https://linkedin.com/in/yourusername",
-  "website": "https://yourwebsite.com",
+  "name": "박기준",
+  "title": "다방면의 성장을 꿈꾸는 제너럴리스트 지망생입니다",
+  "description": "끊임없이 배우고, 다양한 분야를 넘나들며 연결의 가치를 발견하는 것을 즐깁니다. \n기술, 기획, 커뮤니케이션 등 특정 영역에 머무르기보다, 여러 역할을 경험하며 문제를 넓고 깊게 바라보는 Generalist로 성장하고자 합니다.\n변화에 유연하게 대응하며, 팀과 조직에 꼭 필요한 연결고리가 되는 사람이 되고 싶습니다.",
+  "email": "rlwns960@gmail.com",
+  "phone": "010-5635-9224",
+  "location": "경기, 대한민국",
+  "github": "https://github.com/keejuneman",
+  "linkedin": "",
+  "website": "https://keejuneman.github.io/portfolio/",
   "profileImage": "/images/profile.jpg",
   "stats": {
     "projects": "10+",
@@ -15,4 +15,4 @@
     "experience": "2년",
     "skills": "15+"
   }
-} 
+}

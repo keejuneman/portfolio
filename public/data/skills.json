@@ -1,4 +1,98 @@
 [
+<<<<<<< HEAD
+  {
+    "id": "1750169291903",
+    "name": "Python",
+    "level": 4,
+    "category": "Programming",
+    "order": 0
+  },
+  {
+    "id": "1750169388070",
+    "name": "Slack",
+    "level": 4,
+    "category": "Tools",
+    "order": 1
+  },
+  {
+    "id": "1750169419475",
+    "name": "Notion",
+    "level": 3,
+    "category": "Tools",
+    "order": 2
+  },
+  {
+    "id": "1750169498408",
+    "name": "TensorFlow",
+    "level": 3,
+    "category": "AI & Data",
+    "order": 11
+  },
+  {
+    "id": "1750169502911",
+    "name": "Pytorch",
+    "level": 3,
+    "category": "AI & Data",
+    "order": 4
+  },
+  {
+    "id": "1750169521183",
+    "name": "Amazon EC2",
+    "level": 3,
+    "category": "DevOps",
+    "order": 5
+  },
+  {
+    "id": "1750169537912",
+    "name": "사업개발",
+    "level": 2,
+    "category": "Business",
+    "order": 11
+  },
+  {
+    "id": "1750169546995",
+    "name": "시장조사",
+    "level": 4,
+    "category": "Business",
+    "order": 8
+  },
+  {
+    "id": "1750169591683",
+    "name": "Customer Experience",
+    "level": 4,
+    "category": "Operations",
+    "order": 7
+  },
+  {
+    "id": "1750169659342",
+    "name": "HRD",
+    "level": 3,
+    "category": "Operations",
+    "order": 9
+  },
+  {
+    "id": "1750169666968",
+    "name": "KPI 관리",
+    "level": 3,
+    "category": "Operations",
+    "order": 10
+  },
+  {
+    "id": "1750169675930",
+    "name": "사업기획",
+    "level": 3,
+    "category": "Business",
+    "order": 9
+  },
+  {
+    "id": "1750169693470",
+    "name": "MachineLearning",
+    "level": 4,
+    "category": "AI & Data",
+    "order": 3
+  }
+]
+=======
   { "id": "1", "name": "JavaScript", "category": "Programming", "level": 4, "createdAt": "2024-01-01T00:00:00.000Z", "order": 0 },
   { "id": "2", "name": "TypeScript", "category": "Programming", "level": 4, "createdAt": "2024-01-01T00:00:00.000Z", "order": 1 },
   { "id": "3", "name": "Python", "category": "Programming", "level": 3, "createdAt": "2024-01-01T00:00:00.000Z", "order": 2 },
@@ -12,3 +106,4 @@
   { "id": "11", "name": "Git", "category": "Tools", "level": 4, "createdAt": "2024-01-01T00:00:00.000Z", "order": 10 },
   { "id": "12", "name": "Docker", "category": "DevOps", "level": 2, "createdAt": "2024-01-01T00:00:00.000Z", "order": 11 }
 ] 
+>>>>>>> f3cd1ad9adfa65e183b9d7ed7c70350b99f617c3

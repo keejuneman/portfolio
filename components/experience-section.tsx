@@ -99,7 +99,7 @@ export function ExperienceSection() {
                           </div>
                         </div>
 
-                        <p className="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+                        <p className="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed whitespace-pre-wrap">
                           {experience.description}
                         </p>
 

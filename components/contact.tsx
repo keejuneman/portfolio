@@ -59,11 +59,11 @@ export function Contact() {
       label: "GitHub",
       href: about.github,
     },
-    {
-      icon: Linkedin,
-      label: "LinkedIn",
-      href: about.linkedin,
-    },
+    // {
+    //   icon: Linkedin,
+    //   label: "LinkedIn",
+    //   href: about.linkedin,
+    // },
     {
       icon: Globe,
       label: "Website",
