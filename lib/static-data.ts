@@ -2,8 +2,7 @@ import { Project, Experience, Skill, Award, About } from './local-storage'
 
 // basePath를 고려한 데이터 경로 생성
 const getDataPath = (filename: string) => {
-  const basePath = process.env.NODE_ENV === 'production' ? '/portfolio' : ''
-  return `${basePath}/data/${filename}`
+  return `/data/${filename}`
 }
 
 // 정적 데이터 로더
