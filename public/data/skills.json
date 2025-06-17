@@ -25,7 +25,7 @@
     "name": "TensorFlow",
     "level": 3,
     "category": "AI & Data",
-    "order": 11
+    "order": 3
   },
   {
     "id": "1750169502911",
@@ -46,7 +46,7 @@
     "name": "사업개발",
     "level": 2,
     "category": "Business",
-    "order": 11
+    "order": 7
   },
   {
     "id": "1750169546995",
@@ -59,8 +59,8 @@
     "id": "1750169591683",
     "name": "Customer Experience",
     "level": 4,
-    "category": "Operations",
-    "order": 7
+    "category": "Business",
+    "order": 8
   },
   {
     "id": "1750169659342",
@@ -73,7 +73,7 @@
     "id": "1750169666968",
     "name": "KPI 관리",
     "level": 3,
-    "category": "Operations",
+    "category": "Programming",
     "order": 10
   },
   {
@@ -81,13 +81,13 @@
     "name": "사업기획",
     "level": 3,
     "category": "Business",
-    "order": 9
+    "order": 11
   },
   {
     "id": "1750169693470",
     "name": "MachineLearning",
     "level": 4,
     "category": "AI & Data",
-    "order": 3
+    "order": 12
   }
 ]
